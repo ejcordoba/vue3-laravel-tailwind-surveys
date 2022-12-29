@@ -63,6 +63,29 @@
         class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
       />
     </div>
+    <div class="mt-3 col-span-3">
+      <label for="question_type" class="block text-sm font-medium text-gray-700"
+        >Select Question Type</label
+      >
+      <select
+        id="question_type"
+        name="question_type"
+        v-model="model.type"
+        @change="typeChange"
+        class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+      >
+        <option v-for="type in questionTypes" :key="type" :value="type">
+          {{ upperCaseFirst(type) }}
+        </option>
+      </select>
+    </div>
+    <div class="mt-3 col-span-9">
+      <label
+        :for="'question_description_' + model.id"
+        class="block text-sm font-medium text-gray-700"
+        >Description</label
+      >
+    </div>
   </div>
 </template>
 
