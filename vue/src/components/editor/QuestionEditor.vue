@@ -165,6 +165,7 @@
 
 <script setup>
 import { ref, computed } from "vue";
+import { v4 as uuidv4 } from "uuid";
 import store from "../../store";
 const props = defineProps({
   question: Object,
@@ -215,6 +216,7 @@ function dataChange() {
   if (!shouldHaveOptions()) {
     delete data.data.options;
   }
+  emit("change", data);
 }
 </script>
 
