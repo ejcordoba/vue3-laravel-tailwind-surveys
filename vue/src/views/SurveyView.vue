@@ -196,6 +196,8 @@ function questionChange(question) {
     return q;
   });
 }
+
+function saveSurvey() {}
 </script>
 
 <style></style>
