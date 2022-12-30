@@ -47,7 +47,7 @@
       </button>
     </div>
   </div>
-  <div class="grid gap-3 gird-cols-12">
+  <div class="grid gap-3 grid-cols-12">
     <div class="mt-3 col-span-9">
       <label
         :for="'question_text_' + model.data"
@@ -79,14 +79,22 @@
         </option>
       </select>
     </div>
-    <div class="mt-3 col-span-9">
+    <div class="mt-3 col-span-12">
       <label
         :for="'question_description_' + model.id"
         class="block text-sm font-medium text-gray-700"
         >Description</label
       >
+      <textarea
+        :name="'question_description_' + model.id"
+        v-model="model.description"
+        @change="dataChange"
+        :id="'question_description_' + model.id"
+        class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
+      ></textarea>
     </div>
   </div>
+  <hr class="my-4" />
 </template>
 
 <script setup>
